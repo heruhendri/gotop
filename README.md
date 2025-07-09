@@ -32,6 +32,16 @@ See the [change log](/CHANGELOG.md) for release updates.
 
 ## Installation
 
+curl -s https://api.github.com/repos/xxxserxxx/gotop/releases/latest \
+| grep "browser_download_url.*linux-amd64\.tar\.gz" \
+| cut -d '"' -f 4 \
+| xargs curl -L -o gotop.tar.gz
+
+tar -xzf gotop.tar.gz
+cd gotop*/
+sudo mv gotop /usr/local/bin/
+
+
 Working and tested on Linux, FreeBSD and MacOS. Windows binaries are provided, but have limited testing. OpenBSD works with some caveats; cross-compiling is difficult and binaries are not provided.
 
 If you install gotop by hand, or you download or create new layouts or colorschemes, you will need to put the layout files where gotop can find them.  To see the list of directories gotop looks for files, run `gotop -h`.  The first directory is always the directory from which gotop is run.
