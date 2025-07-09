@@ -46,7 +46,7 @@ If you install gotop by hand, or you download or create new layouts or colorsche
 - **OSX**: gotop is in *homebrew-core*.  `brew install gotop`.  Make sure to uninstall and untap any previous installations or taps.
 - **Windows**: gotop is in the [Main](https://github.com/ScoopInstaller/Main) bucket. `scoop install gotop`.
 - **Prebuilt binaries**: Binaries for most systems can be downloaded from [the github releases page](https://github.com/heruhendri/gotop/releases). RPM and DEB packages are also provided.
-- **Source**: This requires Go >= 1.16. `go install github.com/xxxserxxx/gotop/v4/cmd/gotop@latest`
+- **Source**: This requires Go >= 1.16. `go install github.com/heruhendri/gotop/v4/cmd/gotop@latest`
 
 ### Extensions update
 
@@ -60,7 +60,7 @@ Extensions have proven problematic; go plugins are not usable in real-world case
 gotop requires a font that has braille and block character Unicode code points; some distributions do not provide this.  In the gotop repository is a `pcf` font that has these points, and setting this font may improve how gotop renders in your console.  To use this, run these commands:
 
 ```shell
-curl -O -L https://raw.githubusercontent.com/xxxserxxx/gotop/master/fonts/Lat15-VGA16-braille.psf
+curl -O -L https://raw.githubusercontent.com/heruhendri/gotop/master/fonts/Lat15-VGA16-braille.psf
 setfont Lat15-VGA16-braille.psf
 ```
 
@@ -78,7 +78,7 @@ This is the download & compile approach.
 gotop requires Go 1.16 or later to build, as it relies on the embed feature released with 1.16; a library it uses, lingo, uses both embed and the `io/fs` package.  For a version of gotop that builds with earlier versions, check out one of the tags prior to v4.2.0.
 
 ```shell
-git clone https://github.com/xxxserxxx/gotop.git
+git clone https://github.com/heruhendri/gotop.git
 cd gotop
 # This ugly SOB gets a usable version from the git tag list
 VERS="$(git tag -l --sort=-v:refname | sed 's/v\([^-].*\)/\1/g' | head -1 | tr -d '-' ).$(git describe --long --tags | sed 's/\([^-].*\)-\([0-9]*\)-\(g.*\)/r\2.\3/g' | tr -d '-')"
@@ -113,11 +113,11 @@ In addition to the key bindings, the mouse can be used to control the process li
 
 For more information on other topics, see:
 
-- [Layouts](https://github.com/xxxserxxx/gotop/blob/master/docs/layouts.md)
-- [Configuration](https://github.com/xxxserxxx/gotop/blob/master/docs/configuration.md)
-- [Color schemes](https://github.com/xxxserxxx/gotop/blob/master/docs/colorschemes.md)
-- [Device filtering](https://github.com/xxxserxxx/gotop/blob/master/docs/devices.md)
-- [Extensions](https://github.com/xxxserxxx/gotop/blob/master/docs/extensions.md)
+- [Layouts](https://github.com/heruhendri/gotop/blob/master/docs/layouts.md)
+- [Configuration](https://github.com/heruhendri/gotop/blob/master/docs/configuration.md)
+- [Color schemes](https://github.com/heruhendri/gotop/blob/master/docs/colorschemes.md)
+- [Device filtering](https://github.com/heruhendri/gotop/blob/master/docs/devices.md)
+- [Extensions](https://github.com/heruhendri/gotop/blob/master/docs/extensions.md)
 
 Monitoring remote machines
 --------------------------
@@ -146,7 +146,7 @@ document.
 
 ## Contributors
 
-Many people ![](https://img.shields.io/github/contributors/xxxserxxx/gotop) have contributed code to gotop. Most of the work was by the original author, Caleb Bassi, who was seduced by the dark side (Rust) and had to be thrown into a volcano. Thanks to [everyone who's submitted a PR](https://github.com/xxxserxxx/gotop/CONTRIBUTORS.md), or otherwise contributed to the project! 
+Many people ![](https://img.shields.io/github/contributors/heruhendri/gotop) have contributed code to gotop. Most of the work was by the original author, Caleb Bassi, who was seduced by the dark side (Rust) and had to be thrown into a volcano. Thanks to [everyone who's submitted a PR](https://github.com/heruhendri/gotop/CONTRIBUTORS.md), or otherwise contributed to the project! 
 
 
 ## Built With
@@ -158,7 +158,7 @@ Many people ![](https://img.shields.io/github/contributors/xxxserxxx/gotop) have
 - [goreleaser/nfpm](https://github.com/goreleaser/nfpm)
 - [distatus/battery](https://github.com/distatus/battery)
 - [VictoriaMetrics/metrics](https://github.com/VictoriaMetrics/metrics) Check this out! The API is clean, elegant, introduces many fewer indirect dependencies than the Prometheus client, and adds 50% less size to binaries.
-- [lingo](https://github.com/xxxserxxx/lingo) is forked from [jdkeke142's](https://github.com/jdkeke142/lingo-toml) lingo, which was in turn forked from [kortemy's](https://github.com/kortemy/lingo) original project.
+- [lingo](https://github.com/heruhendri/lingo) is forked from [jdkeke142's](https://github.com/jdkeke142/lingo-toml) lingo, which was in turn forked from [kortemy's](https://github.com/kortemy/lingo) original project.
 
 
 ## History
