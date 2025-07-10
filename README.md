@@ -58,7 +58,7 @@ sudo apt install curl tar
 2. **Download dan install `gotop`:**
 
 ```bash
-curl -s https://api.github.com/repos/xxxserxxx/gotop/releases/latest \
+curl -s https://api.github.com/repos/heruhendri/gotop/releases/latest \
 | grep "browser_download_url.*linux-amd64\.tar\.gz" \
 | cut -d '"' -f 4 \
 | xargs curl -L -o gotop.tar.gz
@@ -81,7 +81,7 @@ gotop --version
 Kalau kamu ingin menginstall dengan Go (jika `go` sudah terinstall):
 
 ```bash
-go install github.com/xxxserxxx/gotop/v4/cmd/gotop@latest
+go install github.com/heruhendri/gotop/v4/cmd/gotop@latest
 ```
 
 Pastikan `$GOPATH/bin` sudah ada di PATH:
