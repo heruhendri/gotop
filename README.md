@@ -32,7 +32,10 @@ See the [change log](/CHANGELOG.md) for release updates.
 
 ## Installation
 
-curl -s https://api.github.com/repos/xxxserxxx/gotop/releases/latest \
+### Debian, Ubuntu, and derivatives
+
+```shell
+curl -s https://api.github.com/repos/heruhendri/gotop/releases/latest \
 | grep "browser_download_url.*linux-amd64\.tar\.gz" \
 | cut -d '"' -f 4 \
 | xargs curl -L -o gotop.tar.gz
@@ -40,7 +43,7 @@ curl -s https://api.github.com/repos/xxxserxxx/gotop/releases/latest \
 tar -xzf gotop.tar.gz
 cd gotop*/
 sudo mv gotop /usr/local/bin/
-
+```
 
 Working and tested on Linux, FreeBSD and MacOS. Windows binaries are provided, but have limited testing. OpenBSD works with some caveats; cross-compiling is difficult and binaries are not provided.
 
