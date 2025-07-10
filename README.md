@@ -58,14 +58,10 @@ sudo apt install curl tar
 2. **Download dan install `gotop`:**
 
 ```bash
-curl -s https://api.github.com/repos/heruhendri/gotop/releases/latest \
-| grep "browser_download_url.*linux-amd64\.tar\.gz" \
-| cut -d '"' -f 4 \
-| xargs curl -L -o gotop.tar.gz
-
-tar -xzf gotop.tar.gz
-cd gotop*/
-sudo mv gotop /usr/local/bin/
+    gotop_latest="$(curl -s https://api.github.com/repos/heruhendri/gotop/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+    gotop_link="https://github.com/heruhendri/gotop/releases/download/v$gotop_latest/gotop_v"$gotop_latest"_linux_amd64.deb"
+    curl -sL "$gotop_link" -o /tmp/gotop.deb
+    dpkg -i /tmp/gotop.deb >/dev/null 2>&1
 ```
 
 3. **Cek versi:**
