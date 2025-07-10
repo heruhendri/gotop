@@ -34,8 +34,31 @@ See the [change log](/CHANGELOG.md) for release updates.
 
 ### Debian, Ubuntu, and derivatives
 
-```shell
-curl -s https://api.github.com/repos/heruhendri/gotop/releases/latest \
+## ✅ Cara Menginstal `gotop`
+
+### 📦 Untuk Ubuntu/Debian
+
+#### **Opsi 1: Instal dari repository (jika tersedia)**
+
+```bash
+sudo apt update
+sudo apt install gotop
+```
+
+> *Namun ini biasanya versi lama atau belum tersedia.*
+
+#### **Opsi 2: Instal dari GitHub (versi terbaru)**
+
+1. **Pastikan `curl` dan `tar` tersedia:**
+
+```bash
+sudo apt install curl tar
+```
+
+2. **Download dan install `gotop`:**
+
+```bash
+curl -s https://api.github.com/repos/xxxserxxx/gotop/releases/latest \
 | grep "browser_download_url.*linux-amd64\.tar\.gz" \
 | cut -d '"' -f 4 \
 | xargs curl -L -o gotop.tar.gz
@@ -44,6 +67,40 @@ tar -xzf gotop.tar.gz
 cd gotop*/
 sudo mv gotop /usr/local/bin/
 ```
+
+3. **Cek versi:**
+
+```bash
+gotop --version
+```
+
+
+
+### 💡 Jika Ingin Unik (Go Modules)
+
+Kalau kamu ingin menginstall dengan Go (jika `go` sudah terinstall):
+
+```bash
+go install github.com/xxxserxxx/gotop/v4/cmd/gotop@latest
+```
+
+Pastikan `$GOPATH/bin` sudah ada di PATH:
+
+```bash
+export PATH=$PATH:$(go env GOPATH)/bin
+```
+
+---
+
+Kalau kamu butuh bantuan instalasi spesifik (misalnya Linux versi apa, atau kesulitan dengan permission), kirim hasil perintah:
+
+```bash
+uname -a
+cat /etc/os-release
+```
+
+Bisa aku bantu langkah demi langkah.
+
 
 Working and tested on Linux, FreeBSD and MacOS. Windows binaries are provided, but have limited testing. OpenBSD works with some caveats; cross-compiling is difficult and binaries are not provided.
 
